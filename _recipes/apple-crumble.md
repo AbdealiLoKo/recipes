@@ -4,6 +4,8 @@ layout: recipe
 title:  "Apple Crumble"
 tags: sweet, baking
 
+serves: 4
+
 ingredients:
 - 1 cup Maida
 - 1 cup Sugar

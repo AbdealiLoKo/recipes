@@ -37,7 +37,9 @@ layout: default
       {% endif %}
 
       {% if page.ingredients %}
-      <h4 class="blue mt0 mb2 xs-center">Ingredients</h4>
+      <h4 class="blue mt0 mb2 xs-center">
+        Ingredients {% if page.serves %} (Serves {{ page.serves }}) {% endif %}
+      </h4>
       <ul itemprop="ingredients">
         <!-- list ingredients that make up recipe -->
         {% for ingredient in page.ingredients %}
