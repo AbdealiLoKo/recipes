@@ -1,6 +1,5 @@
 ---
 layout: recipe
-image: 1R0dgk5F0yzI2jH9Ds07O-dSBdjtcTmut
 tags: bread
 ---
 

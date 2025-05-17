@@ -1,6 +1,5 @@
 ---
 layout: recipe
-image: 18ky3w8_bXKUKwTJ4bggfqpRMNGkXXW-c
 tags: sweet
 ---
 

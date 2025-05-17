@@ -1,6 +1,5 @@
 ---
 layout: recipe
-image: 1hTJDointrGX3JAUtPuLNFu1Yyvv-Ol0p
 tags: rice
 ---
 

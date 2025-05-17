@@ -1,6 +1,5 @@
 ---
 layout: recipe
-image: 154Dc0CU0cM4VJ-Tuk3xji0VkJ1X62eZw
 tags: with-bread, baking
 ---
 

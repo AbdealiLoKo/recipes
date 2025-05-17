@@ -1,6 +1,5 @@
 ---
 layout: recipe
-image: 1qg7oBhaLbSg67jRdQriIEk9F05xAStGn
 tags: side, with-roti
 ---
 

@@ -1,6 +1,5 @@
 ---
 layout: recipe
-image: 1PHdwC7ljvYFjjx48zjhWdUXeFmSZfwFm
 tags: with-roti, veggie
 ---
 

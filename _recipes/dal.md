@@ -1,6 +1,5 @@
 ---
 layout: recipe
-image: 1Veo5j2ymrE77XdsA9Q9v4K-GCmEJvxym
 tags: with-rice
 ---
 

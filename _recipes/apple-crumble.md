@@ -1,6 +1,5 @@
 ---
 layout: recipe
-image: 1ZdBFY6BpsvJy86VkMSbUQg5afcGVzpyl
 tags: sweet, baking
 ---
 

@@ -1,6 +1,5 @@
 ---
 layout: recipe
-image: 12evjd99rgQtcWrr--5fttvZGBht7f_GN
 tags: with-roti, dry
 ---
 

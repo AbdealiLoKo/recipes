@@ -1,6 +1,5 @@
 ---
 layout: recipe
-image: 1Fq4lpyixjITa3kFwNL9vYyUmrwSv7gs8
 tags: with-roti
 ---
 
