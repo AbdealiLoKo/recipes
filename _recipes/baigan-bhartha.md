@@ -17,7 +17,7 @@ tags: with-roti
 Cooking the brinjal:
 
 - Take the baigan, coat it with a layer of oil with your hand.
-- Roast it on stove on medium or high heat. Keep turning it around every 2-3 minutes while cooking to cook it evenly.
+- Roast it on stove on medium or high heat. Keep turning it around every 2-3 minutes while cooking to cook it evenly. It takes ~40mins to properly cook.
 - Stop when it is cooked - It is considered cooked if the skin is crisp on all sides.
 - Cut the brinjal and scoop out the insides with a spoon.
 - Chop the insides so that it is pulpy and not chunky.

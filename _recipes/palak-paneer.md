@@ -5,23 +5,28 @@ tags: with-roti
 
 ### Ingredients
 
-- 2 bunches of Spinach
-- 1 tsp ginger garlic paste
-- 1 Green chilli
-- 1 medium Onion
-- 200 gm Paneer
-- Pinch of red chilli powder
-- Fresh Cream
+- 2 medium bunch of spinach (palak)
+- 400 grams cottage cheese (paneer)
+- 2 green chillies
+- 1 tbsp ghee
+- 1 tsp cumin seeds
+- 1 tbsp finely chopped garlic
+- 1 medium onion, finely chopped
+- Salt to taste
+- ½ tsp garam masala powder
+- ¼ tsp dried fenugreek leaves (kasuri methi) powder
+- 2 tbsps fresh cream + for garnish
+- Ginger strips for garnish
 
 Directions
 
-- Pluck the leaves of the spinach and wash them very well else the taste will be bitter.
-- Put the leaves in some water (just enough to soak the spinach in) and put 1 green chilli in it, ginger garlic paste, 1 finely cut onion, and salt.
-- Heat till the water boils, and keep it boiling for 2-3 minutes. Ensure that it does not get over boiled otherwise the spinach becomes very dark.
-- Now take a blender and blend it into a paste.
-- Cut the paneer into cubes.
-- Red chilli powder, Cream, butter, oil
-- Take some butter/oil and heat. Add some garlic and heat. When the garlic color changes to a golden, add a pinch of red chilli, salt to taste and the whole spinach paste in it.
-- Add the paneer to it. and let it simmer for a few minutes.
-- Heat, but don't heat too much otherwise the palak gets very dark.
-- Add some cream to make it thick.
+Video: https://www.youtube.com/watch?v=pcK36lZLLEE
+
+1. Trim the stems of the spinach leaves and wash them thoroughly.
+2. Bring sufficient water to a boil in a deep pan. Add the spinach leaves, mix and cook for 1-2 minutes. Drain into ice cold water.
+3. Squeeze the excess water from the blanched spinach leaves and transfer into a grinder jar. Break the green chillies and add into it. Grind to a fine paste.
+4. Cut the cottage cheese into 1-inch cubes.
+5. Heat ghee in a pan. Add cumin seeds and let them change colour. Add garlic, mix and cook for 1 minute.
+6. Add onion and sauté till translucent. Add the ground paste, mix and cook for 1-2 minutes. Add salt and mix well.
+7. Add cottage cheese, garam masala powder, dried fenugreek leaves powder, fresh cream, and gently mix till well combined. 
+8. Transfer on a serving bowl, garnish with fresh cream, ginger strips, and serve hot with parantha/roti.
