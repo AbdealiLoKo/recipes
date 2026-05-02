@@ -11,12 +11,23 @@ layout: default
     </div>
   </section>
 
+  <section class="recipe-search" aria-label="Search recipes">
+    <label class="recipe-search__label" for="recipe-search-input">Search recipes</label>
+    <input
+      id="recipe-search-input"
+      class="recipe-search__input"
+      type="search"
+      placeholder="Search by recipe name"
+      autocomplete="off"
+    >
+  </section>
+
   <div class="recipes xs-px1 xs-mt2">
-    <div class="clearfix">
+    <div id="recipe-grid" class="clearfix">
       {% assign sorted = site.recipes | sort:"date" %}
       {% for post in sorted %}
 
-        <div class="sm-col sm-col-6 md-col-6 lg-col-4 xs-px1 xs-mb2">
+        <div class="recipe-card-wrap sm-col sm-col-6 md-col-6 lg-col-4 xs-px1 xs-mb2" data-title="{{ post.title | downcase }}">
             <a class="recipe-card block relative" href="{{ post.url | prepend: site.baseurl }}">
               <div class="recipe-card__image image ratio bg-cover" style="background-image: url({{ post.url | replace:'.html','.jpg' | prepend: site.baseurl }});"></div>
               <div class="recipe-card__body absolute">
@@ -28,4 +39,41 @@ layout: default
       {% endfor %}
     </div>
   </div>
+
+  <p id="recipe-search-empty" class="recipe-search__empty" hidden>No recipes found.</p>
 </div>
+
+<script type="text/javascript">
+  (function() {
+    var input = document.getElementById("recipe-search-input");
+    var cards = Array.prototype.slice.call(document.querySelectorAll(".recipe-card-wrap"));
+    var emptyState = document.getElementById("recipe-search-empty");
+
+    if (!input || !cards.length || !emptyState) {
+      return;
+    }
+
+    function normalize(value) {
+      return value.toLowerCase().replace(/\s+/g, " ").trim();
+    }
+
+    function filterRecipes() {
+      var query = normalize(input.value);
+      var matches = 0;
+
+      cards.forEach(function(card) {
+        var title = card.getAttribute("data-title") || "";
+        var isMatch = !query || title.indexOf(query) !== -1;
+
+        card.hidden = !isMatch;
+        if (isMatch) {
+          matches += 1;
+        }
+      });
+
+      emptyState.hidden = matches !== 0;
+    }
+
+    input.addEventListener("input", filterRecipes);
+  })();
+</script>
