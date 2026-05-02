@@ -1,62 +1,102 @@
 ---
 layout: default
 ---
-<div class="recipe-page container" itemscope itemtype="http://schema.org/Recipe">
 
-  <div class="recipe-page__backdrop"></div>
+<div
+    class="recipe-page container"
+    itemscope
+    itemtype="http://schema.org/Recipe"
+>
+    <div class="recipe-page__backdrop"></div>
 
-  <div class="recipe-page__hero image-container xs-p2">
-    <img
-      itemprop="image"
-      src="{{ page.url | replace:'.html','.jpg' | prepend: site.baseurl }}"
-      alt="{{ page.title }}"
-      onerror="this.onerror=null;this.src='{{ '/assets/placeholder-food.png' | prepend: site.baseurl }}';this.closest('.recipe-page__hero').setAttribute('data-image-missing','true');"
-    />
-    <p class="recipe-page__missing">No image available</p>
-  </div>
-
-  <article class="post-content recipe-page__content px2">
-
-    <header class="post-header">
-      <p class="recipe-page__eyebrow center">Recipe</p>
-      <h1 class="post-title center m1 sm-mt3" itemprop="name">{{ page.title }}</h1>
-    </header>
-
-    <div class="recipe-page__body px2 mt3 clearfix">
-      <div class="sm-col-8 mx-auto" itemprop="description">{{page.content}}</div>
+    <div class="recipe-page__hero image-container xs-p2">
+        <img
+            itemprop="image"
+            src="{{ page.url | replace:'.html','.jpg' | prepend: site.baseurl }}"
+            alt="{{ page.title }}"
+            onerror="this.onerror=null;this.src='{{ '/assets/placeholder-food.png' | prepend: site.baseurl }}';this.closest('.recipe-page__hero').setAttribute('data-image-missing','true');"
+        />
+        <p class="recipe-page__missing">No image available</p>
     </div>
 
-    {% if page.categories %}
-      <div class="recipe-page__categories clearfix">
-        {% for category in page.categories %}
-          <p class="recipe-page__category">Category: <span itemprop="recipeCategory">{{ category }}</span></p>
-        {% endfor %}
-      </div>
-    {% endif %}
+    <article class="post-content recipe-page__content px2">
+        <header class="post-header">
+            <p class="recipe-page__eyebrow center">Recipe</p>
+            <h1 class="post-title center m1 sm-mt3" itemprop="name">
+                {{ page.title }}
+            </h1>
+        </header>
 
-  </article>
+        <div class="recipe-page__body px2 mt3 clearfix">
+            <div class="sm-col-8 mx-auto" itemprop="description">
+                {{page.content}}
+            </div>
+        </div>
 
+        {% if page.categories %}
+        <div class="recipe-page__categories clearfix">
+            {% for category in page.categories %}
+            <p class="recipe-page__category">
+                Category: <span itemprop="recipeCategory">{{ category }}</span>
+            </p>
+            {% endfor %}
+        </div>
+        {% endif %}
+    </article>
 </div>
 
 <script type="text/javascript">
+    $(document).ready(function () {
+        var recipeSections = $(".recipe-page__body .sm-col-8");
+        var ingredientList = recipeSections
+            .find("h2, h3, h4")
+            .filter(function () {
+                return (
+                    $(this)
+                        .text()
+                        .trim()
+                        .toLowerCase()
+                        .indexOf("ingredient") === 0
+                );
+            })
+            .first()
+            .next("ul");
+        var stepList = recipeSections
+            .find("h2, h3, h4")
+            .filter(function () {
+                var title = $(this).text().trim().toLowerCase();
+                return (
+                    title.indexOf("direction") === 0 ||
+                    title.indexOf("step") === 0 ||
+                    title.indexOf("method") === 0
+                );
+            })
+            .first()
+            .next("ul");
 
-  $( document ).ready(function() {
+        ingredientList.addClass("recipe-ingredients");
+        stepList.addClass("recipe-steps");
+        stepList.children("li").children("ul").addClass("recipe-substeps");
 
-  jQuery.fn.clickToggle = function(a,b) {
-  var ab=[b,a];
-  function cb(){ ab[this._tog^=1].call(this); }
-  return this.on("click", cb);
-  };
+        ingredientList
+            .children("li")
+            .prepend(
+                '<input class="recipe-checkbox" type="checkbox" aria-label="Mark ingredient done">',
+            );
 
-  $("ul li").append('<input type="checkbox">');
-  $("ul li").clickToggle(function(){
-    $(this).children("input").prop('checked', true);
-    $(this).addClass("is-checked");
-  }, function(){
-    $(this).children("input").prop('checked', false);
-    $(this).removeClass("is-checked");
-  });
+        ingredientList
+            .children("li")
+            .add(stepList.children("li"))
+            .on("click", function (event) {
+                if ($(event.target).closest(".recipe-substeps").length) {
+                    return;
+                }
 
-  });
+                var item = $(this);
+                var nextState = !item.hasClass("is-checked");
 
+                item.toggleClass("is-checked", nextState);
+                item.children("input").prop("checked", nextState);
+            });
+    });
 </script>

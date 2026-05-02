@@ -382,6 +382,134 @@ ul li.is-checked {
   opacity: 0.7;
 }
 
+.recipe-page__body .recipe-ingredients,
+.recipe-page__body .recipe-steps {
+  list-style: none;
+  margin: 0 0 1.5rem;
+  padding: 0;
+}
+
+.recipe-page__body .recipe-ingredients > li,
+.recipe-page__body .recipe-steps > li {
+  margin-bottom: 0.55rem;
+  padding: 0.62rem 0.8rem 0.62rem 3rem;
+  border: 1px solid rgba(101, 69, 42, 0.09);
+  border-radius: 12px;
+  background: rgba(255, 252, 247, 0.72);
+  box-shadow: 0 4px 12px rgba(62, 38, 19, 0.035);
+  cursor: pointer;
+  transition: transform 140ms ease, box-shadow 140ms ease, border-color 140ms ease, background 140ms ease;
+}
+
+.recipe-page__body .recipe-ingredients > li:hover,
+.recipe-page__body .recipe-steps > li:hover {
+  box-shadow: 0 8px 16px rgba(62, 38, 19, 0.05);
+  border-color: rgba(200, 103, 61, 0.18);
+}
+
+.recipe-page__body .recipe-ingredients > li {
+  margin-bottom: 0.28rem;
+  padding-top: 0.32rem;
+  padding-bottom: 0.32rem;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  background: transparent;
+  line-height: 1.25;
+}
+
+.recipe-page__body .recipe-ingredients > li::before,
+.recipe-page__body .recipe-steps > li::before {
+  content: none;
+}
+
+.recipe-page__body .recipe-checkbox {
+  position: absolute;
+  top: 0.66rem;
+  left: 0.8rem;
+  width: 1.15rem;
+  height: 1.15rem;
+  margin: 0;
+  opacity: 1;
+  accent-color: var(--accent);
+  cursor: pointer;
+}
+
+.recipe-page__body .recipe-ingredients > li .recipe-checkbox {
+  top: 0.34rem;
+}
+
+.recipe-page__body .recipe-steps {
+  counter-reset: recipe-step;
+}
+
+.recipe-page__body .recipe-steps > li {
+  padding-left: 3.75rem;
+}
+
+.recipe-page__body .recipe-steps > li::after {
+  position: absolute;
+  top: 0.44rem;
+  left: 0.8rem;
+  width: 1.8rem;
+  height: 1.8rem;
+  content: counter(recipe-step);
+  counter-increment: recipe-step;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  border: 1px solid rgba(200, 103, 61, 0.32);
+  background: rgba(200, 103, 61, 0.08);
+  color: var(--accent-deep);
+  font-size: 0.88rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.recipe-page__body .recipe-ingredients > li.is-checked,
+.recipe-page__body .recipe-steps > li.is-checked {
+  background: rgba(200, 103, 61, 0.08);
+  border-color: rgba(200, 103, 61, 0.22);
+  color: rgba(107, 90, 76, 0.72);
+}
+
+.recipe-page__body .recipe-ingredients > li.is-checked,
+.recipe-page__body .recipe-steps > li.is-checked,
+.recipe-page__body .recipe-ingredients > li.is-checked p,
+.recipe-page__body .recipe-steps > li.is-checked p {
+  opacity: 1;
+}
+
+.recipe-page__body .recipe-ingredients > li.is-checked,
+.recipe-page__body .recipe-steps > li.is-checked {
+  text-decoration: line-through;
+  text-decoration-thickness: 0.08em;
+  text-decoration-color: rgba(143, 63, 34, 0.3);
+}
+
+.recipe-page__body .recipe-steps > li.is-checked::after {
+  content: "✓";
+  background: linear-gradient(135deg, #e39b63, var(--accent));
+  border-color: transparent;
+  color: #fff8f0;
+}
+
+.recipe-page__body .recipe-substeps {
+  margin: 0.55rem 0 0;
+  padding-left: 1.15rem;
+  list-style: disc;
+}
+
+.recipe-page__body .recipe-substeps li {
+  margin-bottom: 0.55rem;
+  padding-left: 0.15rem;
+}
+
+.recipe-page__body .recipe-substeps li::before {
+  content: none;
+}
+
 .recipe-page__categories {
   width: min(100%, 44rem);
   margin: 0 auto;
