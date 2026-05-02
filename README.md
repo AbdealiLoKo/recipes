@@ -7,9 +7,9 @@ A repo to keep a bunch of recipes.
 
 ## Run in local
 
-To run in local, get ruby 3+ and run:
+To run in local:
 
 ```
-gem install jekyll bundler webrick
+sudo apt install jekyll
 jekyll serve
 ```
