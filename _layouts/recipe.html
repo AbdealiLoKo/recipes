@@ -52,15 +52,9 @@ layout: default
   $("ul li").clickToggle(function(){
     $(this).children("input").prop('checked', true);
     $(this).addClass("is-checked");
-    var height = $(this).height();
-    var y = $(window).scrollTop();
-    $('html, body').animate({scrollTop: y+height+16}, 200);
   }, function(){
     $(this).children("input").prop('checked', false);
     $(this).removeClass("is-checked");
-    var height = $(this).height();
-    var y = $(window).scrollTop();
-    $('html, body').animate({scrollTop: y-height-16}, 200);
   });
 
   });
