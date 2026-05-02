@@ -1,25 +1,32 @@
 ---
 layout: default
 ---
-<div class="container" itemscope itemtype="http://schema.org/Recipe">
+<div class="recipe-page container" itemscope itemtype="http://schema.org/Recipe">
 
-  <div class="image-container xs-p2">
-    <img itemprop="image" src="{{ page.url | replace:'.html','.jpg' | prepend: site.baseurl }}" />
+  <div class="recipe-page__backdrop"></div>
+
+  <div class="recipe-page__hero image-container xs-p2">
+    <img itemprop="image" src="{{ page.url | replace:'.html','.jpg' | prepend: site.baseurl }}" alt="{{ page.title }}" />
   </div>
 
-  <article class="post-content px2">
+  <article class="post-content recipe-page__content px2">
 
     <header class="post-header">
+      <p class="recipe-page__eyebrow center">Recipe</p>
       <h1 class="post-title center m1 sm-mt3" itemprop="name">{{ page.title }}</h1>
     </header>
 
-    <div class="px2 mt3 clearfix">
+    <div class="recipe-page__body px2 mt3 clearfix">
       <div class="sm-col-8 mx-auto" itemprop="description">{{page.content}}</div>
     </div>
 
-    {% for category in page.categories %}
-      <p class="clearfix">Category: <span itemprop="recipeCategory">{{ category }}</span></p>
-    {% endfor %}
+    {% if page.categories %}
+      <div class="recipe-page__categories clearfix">
+        {% for category in page.categories %}
+          <p class="recipe-page__category">Category: <span itemprop="recipeCategory">{{ category }}</span></p>
+        {% endfor %}
+      </div>
+    {% endif %}
 
   </article>
 
@@ -38,11 +45,13 @@ layout: default
   $("ul li").append('<input type="checkbox">');
   $("ul li").clickToggle(function(){
     $(this).children("input").prop('checked', true);
+    $(this).addClass("is-checked");
     var height = $(this).height();
     var y = $(window).scrollTop();
     $('html, body').animate({scrollTop: y+height+16}, 200);
   }, function(){
     $(this).children("input").prop('checked', false);
+    $(this).removeClass("is-checked");
     var height = $(this).height();
     var y = $(window).scrollTop();
     $('html, body').animate({scrollTop: y-height-16}, 200);
