@@ -8,7 +8,7 @@ tags: with-rice
 - 1 cup Curd
 - 2 tbsp Besan
 - Garlic (Adrak)
-- Green hillies
+- Green chillies
 - Dry red chillies
 - Curry leaves
 - 1 medium Onion
