@@ -7,12 +7,13 @@ layout: default
     itemscope
     itemtype="http://schema.org/Recipe"
 >
+    {% assign recipe_image = page.image | default: page.url | replace:'.html','.jpg' %}
     <div class="recipe-page__backdrop"></div>
 
     <div class="recipe-page__hero image-container xs-p2">
         <img
             itemprop="image"
-            src="{{ page.url | replace:'.html','.jpg' | prepend: site.baseurl }}"
+            src="{{ recipe_image | prepend: site.baseurl }}"
             alt="{{ page.title }}"
             onerror="this.onerror=null;this.src='{{ '/assets/placeholder-food.png' | prepend: site.baseurl }}';this.closest('.recipe-page__hero').setAttribute('data-image-missing','true');"
         />
